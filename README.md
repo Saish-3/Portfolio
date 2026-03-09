@@ -1,16 +1,62 @@
-# React + Vite
+# Saish Bhujbal — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built with React and Framer Motion.
 
-Currently, two official plugins are available:
+**Live:** [portfolio-alpha-lyart-e53xmsbg1l.vercel.app](https://portfolio-alpha-lyart-e53xmsbg1l.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** — component architecture
+- **Framer Motion** — scroll animations and transitions
+- **Vite** — build tool and dev server
+- **Vercel** — deployment
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+```
+src/
+└── portfolio.jsx   # Single-file app — all components, styles, and logic
+```
+
+All styling is done with inline styles. No CSS framework or external stylesheet.
+
+---
+
+## Sections
+
+| Section | Description |
+|---|---|
+| Hero | Animated heading with typing effect |
+| About | Bio, photo, and background |
+| Projects | Selected work with tech stack |
+| Skills | Technical stack cards |
+| Quote | Scroll-animated text panel |
+| Hobbies | Personal interests |
+| Contact | Email form and links |
+
+---
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+---
+
+## Contact
+
+- **Email** — saishbhujbal03@gmail.com
+- **GitHub** — [github.com/Saish-3](https://github.com/Saish-3)
+- **LinkedIn** — [linkedin.com/in/saish-bhujbal](https://www.linkedin.com/in/saish-bhujbal-99a56b301/)
