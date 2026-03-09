@@ -97,6 +97,23 @@ function Nav({ active }) {
         @media (max-width: 640px) {
           .desktop-nav { display: none !important; }
           .hamburger { display: block !important; }
+          .about-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .project-row { grid-template-columns: 40px 1fr !important; gap: 1rem !important; padding: 1.5rem 1.25rem !important; }
+          .project-desc { display: none !important; }
+          .project-links { display: none !important; }
+          .hero-watermark { display: none !important; }
+          .hero-typed { font-size: 16px !important; }
+          .skills-grid { grid-template-columns: 1fr !important; }
+          .hobbies-grid { grid-template-columns: 1fr 1fr !important; }
+          .footer-grid { flex-direction: column !important; gap: 1rem !important; }
+        }
+        @media (max-width: 900px) {
+          .about-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .project-row { grid-template-columns: 60px 1fr !important; gap: 1.5rem !important; }
+          .project-desc { display: none !important; }
+          .project-links { display: none !important; }
         }
       `}</style>
     </nav>
@@ -116,7 +133,7 @@ function Hero({ containerRef }) {
       {/* Main content */}
       <div style={{ position: "relative", padding: "4rem clamp(1.5rem, 5vw, 5rem) 0", display: "flex", flexDirection: "column", justifyContent: "center", flex: 1 }}>
         {/* Huge background text */}
-        <div style={{
+        <div className="hero-watermark" style={{
           position: "absolute", top: "50%", right: 0, transform: "translateY(-50%)",
           fontSize: "clamp(120px, 18vw, 280px)", fontWeight: 900, color: "#e8e5dc",
           lineHeight: 1, userSelect: "none", pointerEvents: "none", letterSpacing: "-0.04em",
@@ -200,7 +217,7 @@ function Hero({ containerRef }) {
 function About() {
   return (
     <section id="about" style={{ width: "100vw", boxSizing: "border-box", padding: "8rem 0" }}>
-      <div style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
+      <div className="about-grid" style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
           <h2 style={{
             fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
@@ -216,7 +233,7 @@ function About() {
             I enjoy the mix of logic and creativity that programming brings. Some days I'm writing clean code, other days I'm solving DSA problems, participating in hackathons or coding competitions, and exploring new technologies just to see how far I can push my understanding.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.85, color: "#444", maxWidth: 520 }}>
-            Outside of coding, I like keeping life balanced. You'll probably find me doing calisthenics, going on sunset runs, baking sourdough (or really anything that goes in an oven), learning new dance moves, or editing videos. Spirituality isn't something I read about — it's something I practise. I believe exploring different interests keeps me curious — and curiosity always leads to better ideas and better software.
+            Outside of coding, I like keeping life balanced. You'll probably find me doing calisthenics, going on sunset runs, baking, learning new dance moves, or editing videos. I practise spirituality. I believe exploring different interests keeps me curious — and curiosity always leads to better ideas and better software.
           </p>
         </motion.div>
 
@@ -296,7 +313,7 @@ function Projects() {
         >
           <motion.div variants={{ hover: { background: "#e8e5dc" } }}
             transition={{ duration: 0.3 }}
-            style={{  padding: "2rem clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "80px 1fr 320px 120px", gap: "3rem", alignItems: "center" }}>
+            style={{ padding: "2rem clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "80px 1fr 320px 120px", gap: "3rem", alignItems: "center" }} className="project-row">
 
             <span style={{ fontWeight: 900, fontSize: 13, color: "#0000CD", letterSpacing: "0.05em" }}>{p.num}</span>
 
@@ -305,9 +322,9 @@ function Projects() {
               <span style={{ fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", color: "#0000CD", fontWeight: 700 }}>{p.tech}</span>
             </div>
 
-            <p style={{ fontSize: 14, lineHeight: 1.75, color: "#666" }}>{p.desc}</p>
+            <p className="project-desc" style={{ fontSize: 14, lineHeight: 1.75, color: "#666" }}>{p.desc}</p>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "flex-end" }}>
+            <div className="project-links" style={{ display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "flex-end" }}>
               <a href={p.github} style={{
                 fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase",
                 fontWeight: 700, color: "#1a1a1a", textDecoration: "none",
@@ -325,7 +342,7 @@ function Projects() {
         </motion.div>
       ))}
 
-      <style>{`@media(max-width:900px){.project-row{grid-template-columns:60px 1fr!important;}}`}</style>
+
     </section>
   );
 }
@@ -429,7 +446,7 @@ function Skills() {
               box-shadow: 0 20px 40px rgba(0,0,205,0.12);
             }
           `}</style>
-          <div style={{
+          <div className="skills-grid" style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
             gap: "2rem",
@@ -510,7 +527,7 @@ function Hobbies() {
           letterSpacing: "-0.04em", lineHeight: 0.9, color: "#EDEBE3", marginBottom: "5rem"
         }}>hobbies &<br /><span style={{ color: "#0000CD" }}>interests.</span></h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1.5rem" }}>
+        <div className="hobbies-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1.5rem" }}>
           {hobbies.map((h, i) => (
             <motion.div key={h.name}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -551,7 +568,7 @@ function Contact() {
 
   return (
     <section id="contact" style={{ width: "100vw", boxSizing: "border-box", padding: "8rem 0" }}>
-      <div style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8rem" }}>
+      <div className="contact-grid" style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8rem" }}>
         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <h2 style={{
             fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
