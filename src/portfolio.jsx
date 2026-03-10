@@ -564,7 +564,33 @@ function Hobbies() {
 // ─── Contact ─────────────────────────────────────────────────────────────────
 function Contact() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleSubmit = async () => {
+    if (!form.name || !form.email || !form.message) return;
+    setSending(true);
+    setError("");
+    try {
+      await window.emailjs.send(
+        "service_portfolio",      // ← replace with your EmailJS Service ID
+        "template_portfolio",     // ← replace with your EmailJS Template ID
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+          to_email: "saishbhujbal03@gmail.com",
+        },
+        "YOUR_EMAILJS_PUBLIC_KEY" // ← replace with your EmailJS Public Key
+      );
+      setSent(true);
+    } catch (err) {
+      setError("Something went wrong. Try emailing me directly.");
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <section id="contact" style={{ width: "100vw", boxSizing: "border-box", padding: "8rem 0" }}>
@@ -633,16 +659,17 @@ function Contact() {
                     )}
                   </div>
                 ))}
-                <button onClick={() => { if (form.name && form.email && form.message) setSent(true); }}
+                <button onClick={handleSubmit} disabled={sending}
                   style={{
-                    background: "#0000CD", color: "#fff", padding: "16px 40px",
+                    background: sending ? "#6666cc" : "#0000CD", color: "#fff", padding: "16px 40px",
                     fontWeight: 800, fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase",
-                    border: "none", cursor: "pointer", transition: "background 0.2s", width: "100%"
+                    border: "none", cursor: sending ? "not-allowed" : "pointer", transition: "background 0.2s", width: "100%"
                   }}
-                  onMouseEnter={e => e.target.style.background = "#0000a8"}
-                  onMouseLeave={e => e.target.style.background = "#0000CD"}>
-                  Send Message →
+                  onMouseEnter={e => { if (!sending) e.target.style.background = "#0000a8"; }}
+                  onMouseLeave={e => { if (!sending) e.target.style.background = "#0000CD"; }}>
+                  {sending ? "Sending..." : "Send Message →"}
                 </button>
+                {error && <p style={{ marginTop: "1rem", fontSize: 13, color: "#cc0000" }}>{error}</p>}
               </motion.div>
             )}
           </AnimatePresence>
@@ -690,6 +717,16 @@ function Footer() {
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
   const containerRef = useRef(null);
+
+  useEffect(() => {
+    // Load EmailJS SDK
+    if (!window.emailjs) {
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+      script.onload = () => window.emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // ← same key as in Contact
+      document.head.appendChild(script);
+    }
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
