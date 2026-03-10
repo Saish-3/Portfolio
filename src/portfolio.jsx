@@ -581,7 +581,10 @@ function Contact() {
         "template_9trhuthn",
         {
           name: form.name,
+          from_name: form.name,
           email: form.email,
+          from_email: form.email,
+          reply_to: form.email,
           message: form.message,
         },
         "Ulic8uKlCkbbu8nLA"
