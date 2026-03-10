@@ -95,6 +95,7 @@ function Nav({ active }) {
         body { width: 100% !important; overflow-x: hidden !important; margin: 0 !important; padding: 0 !important; min-width: 0 !important; }
         #root { width: 100% !important; overflow-x: hidden !important; }
         @media (max-width: 640px) {
+          section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
           .desktop-nav { display: none !important; }
           .hamburger { display: block !important; }
           .about-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
@@ -105,7 +106,7 @@ function Nav({ active }) {
           .hero-watermark { display: none !important; }
           .hero-typed { font-size: 16px !important; }
           .skills-grid { grid-template-columns: 1fr !important; }
-          .hobbies-grid { grid-template-columns: 1fr 1fr !important; }
+          .hobbies-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
           .footer-grid { flex-direction: column !important; gap: 1rem !important; }
         }
         @media (max-width: 900px) {
@@ -448,7 +449,7 @@ function Skills() {
           `}</style>
           <div className="skills-grid" style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(300px, 100%), 1fr))",
             gap: "2rem",
           }}>
             {skillCards.map((card, i) => (
@@ -527,7 +528,7 @@ function Hobbies() {
           letterSpacing: "-0.04em", lineHeight: 0.9, color: "#EDEBE3", marginBottom: "5rem"
         }}>hobbies &<br /><span style={{ color: "#0000CD" }}>interests.</span></h2>
 
-        <div className="hobbies-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1.5rem" }}>
+        <div className="hobbies-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(260px, 100%), 1fr))", gap: "1.5rem" }}>
           {hobbies.map((h, i) => (
             <motion.div key={h.name}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -574,15 +575,15 @@ function Contact() {
     setError("");
     try {
       await window.emailjs.send(
-        "service_portfolio",      // ← replace with your EmailJS Service ID
-        "template_portfolio",     // ← replace with your EmailJS Template ID
+        "service_wilj558",      // ← replace with your EmailJS Service ID
+        "template_9trhuthn",     // ← replace with your EmailJS Template ID
         {
           from_name: form.name,
           from_email: form.email,
           message: form.message,
           to_email: "saishbhujbal03@gmail.com",
         },
-        "YOUR_EMAILJS_PUBLIC_KEY" // ← replace with your EmailJS Public Key
+        "Ulic8uKlCkbbu8nLA" // ← replace with your EmailJS Public Key
       );
       setSent(true);
     } catch (err) {
@@ -723,7 +724,7 @@ export default function Portfolio() {
     if (!window.emailjs) {
       const script = document.createElement("script");
       script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
-      script.onload = () => window.emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // ← same key as in Contact
+      script.onload = () => window.emailjs.init("Ulic8uKlCkbbu8nLA"); // ← same key as in Contact
       document.head.appendChild(script);
     }
   }, []);
