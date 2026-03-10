@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 // ─── ScrollAndSwapText Component ────────────────────────────────────────────
 const ScrollAndSwapText = ({ label, offset = ["0 0", "0 1"], className, containerRef, ...props }) => {
@@ -574,20 +575,20 @@ function Contact() {
     setSending(true);
     setError("");
     try {
-      await window.emailjs.send(
-        "service_wilj558",      // ← replace with your EmailJS Service ID
-        "template_9trhuthn",     // ← replace with your EmailJS Template ID
+      await emailjs.send(
+        "service_wilj558",
+        "template_9trhuthn",
         {
-          from_name: form.name,
-          from_email: form.email,
+          name: form.name,
+          email: form.email,
           message: form.message,
-          to_email: "saishbhujbal03@gmail.com",
         },
-        "Ulic8uKlCkbbu8nLA" // ← replace with your EmailJS Public Key
+        "Ulic8uKlCkbbu8nLA"
       );
       setSent(true);
     } catch (err) {
-      setError("Something went wrong. Try emailing me directly.");
+      console.error("EmailJS error:", err);
+      setError("Error: " + (err?.text || err?.message || JSON.stringify(err)));
     } finally {
       setSending(false);
     }
@@ -719,15 +720,7 @@ export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    // Load EmailJS SDK
-    if (!window.emailjs) {
-      const script = document.createElement("script");
-      script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
-      script.onload = () => window.emailjs.init("Ulic8uKlCkbbu8nLA"); // ← same key as in Contact
-      document.head.appendChild(script);
-    }
-  }, []);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
