@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
+emailjs.init("Ulic8uKlCkbbu8nLA");
 
 // ─── ScrollAndSwapText Component ────────────────────────────────────────────
 const ScrollAndSwapText = ({ label, offset = ["0 0", "0 1"], className, containerRef, ...props }) => {
