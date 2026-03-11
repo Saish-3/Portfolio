@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import emailjs from "@emailjs/browser";
-emailjs.init("Ulic8uKlCkbbu8nLA");
 
 // ─── ScrollAndSwapText Component ────────────────────────────────────────────
 const ScrollAndSwapText = ({ label, offset = ["0 0", "0 1"], className, containerRef, ...props }) => {
@@ -576,9 +574,9 @@ function Contact() {
     setSending(true);
     setError("");
     try {
-      await emailjs.send(
+      await window.emailjs.send(
         "service_wilj558",
-        "template_9trhuthn",
+        "template_9truhtn",
         {
           name: form.name,
           from_name: form.name,
