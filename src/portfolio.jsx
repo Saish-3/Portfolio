@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 // ─── ScrollAndSwapText Component ────────────────────────────────────────────
 const ScrollAndSwapText = ({ label, offset = ["0 0", "0 1"], className, containerRef, ...props }) => {
@@ -272,15 +273,15 @@ const projects = [
     title: "Song Recommendation",
     tech: "Python / ML",
     desc: "A music recommendation system that suggests songs based on listening habits and mood. Uses similarity algorithms to surface tracks you'll actually love.",
-    github: "https://github.com/Saish-3",
+    github: "https://github.com/Saish-3/Song-recommendation",
     live: null,
   },
   {
     num: "02",
-    title: "Whack-a-Mole",
-    tech: "JavaScript / HTML / CSS",
-    desc: "A fun browser-based Whack-a-Mole game with score tracking, increasing difficulty, and smooth animations.",
-    github: "https://github.com/Saish-3",
+    title: "Customer-churn",
+    tech: "Python / ML",
+    desc: "A machine learning model to predict customer churn and identify at-risk customers.",
+    github: "https://github.com/Saish-3/Customer-churn",
     live: null,
   },
   {
@@ -288,7 +289,7 @@ const projects = [
     title: "Expense Tracker",
     tech: "JavaScript / React",
     desc: "A personal finance tracker to log, categorise, and visualise daily expenses. Clean UI with charts to give a clear picture of spending habits.",
-    github: "https://github.com/Saish-3",
+    github: "https://github.com/Saish-3/Expense-tracker",
     live: null,
   },
 ];
