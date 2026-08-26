@@ -275,7 +275,7 @@ const projects = [
     tech: "Python, FastAPI, PostgreSQL, React",
     desc: "Developed an end-to-end real-time fraud detection system for UPI transactions, identifying and preventing fraudulent activities using machine learning and anomaly detection.",
     github: "https://github.com/BankimKamila185/payit-",
-    live: null,
+    live: "https://payit-mu.vercel.app/",
   },
   {
     num: "02",
@@ -283,7 +283,7 @@ const projects = [
     tech: "React, Claude API",
     desc: "Real-time SGPA simulator and AI study planner that calculates target grades and generates personalized, exam-focused study plans using Claude API.",
     github: "https://github.com/Saish-3/Customer-churn",
-    live: null,
+    live: "https://sgpa-sigma.vercel.app/",
   },
   {
     num: "03",
