@@ -274,7 +274,7 @@ const projects = [
     tech: "Python / ML",
     desc: "A music recommendation system that suggests songs based on listening habits and mood. Uses similarity algorithms to surface tracks you'll actually love.",
     github: "https://github.com/Saish-3/Song-recommendation",
-    live: null,
+    live: "https://payit-mu.vercel.app/",
   },
   {
     num: "02",
@@ -282,7 +282,7 @@ const projects = [
     tech: "Python / ML",
     desc: "A machine learning model to predict customer churn and identify at-risk customers.",
     github: "https://github.com/Saish-3/Customer-churn",
-    live: null,
+    live: "https://sgpa-sigma.vercel.app/",
   },
   {
     num: "03",
