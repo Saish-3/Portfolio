@@ -64,7 +64,7 @@ function Nav({ active }) {
       background: "#EDEBE3", borderBottom: "1px solid #d0cec6",
       fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
     }}>
-      <div style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "flex", alignItems: "center", justifyContent: "space-between", height: 56 }}>
+      <div style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "flex", alignItems: "center", justifyContent: "space-between", height: 56 }}>
         <span style={{ fontWeight: 900, fontSize: 18, letterSpacing: "-0.02em", color: "#0000CD" }}>SB.</span>
         {/* Desktop */}
         <div style={{ display: "flex", gap: "2.5rem" }} className="desktop-nav">
@@ -127,10 +127,11 @@ function Hero({ containerRef }) {
   const typed = useTypingEffect(["Software Developer.", "Problem Solver.", "Tech Enthusiast.", "Creator."]);
 
   return (
-    <section id="hero" style={{ width: "100vw", boxSizing: "border-box",
+    <section id="hero" style={{
+      width: "100vw", boxSizing: "border-box",
       minHeight: "100vh", display: "flex", flexDirection: "column",
       paddingTop: 56, position: "relative", overflow: "hidden",
-      
+
     }}>
       {/* Main content */}
       <div style={{ position: "relative", padding: "4rem clamp(1.5rem, 5vw, 5rem) 0", display: "flex", flexDirection: "column", justifyContent: "center", flex: 1 }}>
@@ -219,7 +220,7 @@ function Hero({ containerRef }) {
 function About() {
   return (
     <section id="about" style={{ width: "100vw", boxSizing: "border-box", padding: "8rem 0" }}>
-      <div className="about-grid" style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
+      <div className="about-grid" style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
           <h2 style={{
             fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
@@ -270,34 +271,34 @@ function About() {
 const projects = [
   {
     num: "01",
+    title: "Real-Time UPI Fraud Detection & Payment Platform",
+    tech: "Python, FastAPI, PostgreSQL, React",
+    desc: "Developed an end-to-end real-time fraud detection system for UPI transactions, identifying and preventing fraudulent activities using machine learning and anomaly detection.",
+    github: "https://github.com/BankimKamila185/payit-",
+    live: null,
+  },
+  {
+    num: "02",
+    title: "SGPA",
+    tech: "React, Claude API",
+    desc: "Real-time SGPA simulator and AI study planner that calculates target grades and generates personalized, exam-focused study plans using Claude API.",
+    github: "https://github.com/Saish-3/Customer-churn",
+    live: null,
+  },
+  {
+    num: "03",
     title: "Song Recommendation",
     tech: "Python / ML",
     desc: "A music recommendation system that suggests songs based on listening habits and mood. Uses similarity algorithms to surface tracks you'll actually love.",
     github: "https://github.com/Saish-3/Song-recommendation",
-    live: "https://payit-mu.vercel.app/",
-  },
-  {
-    num: "02",
-    title: "Customer-churn",
-    tech: "Python / ML",
-    desc: "A machine learning model to predict customer churn and identify at-risk customers.",
-    github: "https://github.com/Saish-3/Customer-churn",
-    live: "https://sgpa-sigma.vercel.app/",
-  },
-  {
-    num: "03",
-    title: "Expense Tracker",
-    tech: "JavaScript / React",
-    desc: "A personal finance tracker to log, categorise, and visualise daily expenses. Clean UI with charts to give a clear picture of spending habits.",
-    github: "https://github.com/Saish-3/Expense-tracker",
     live: null,
-  },
+  }
 ];
 
 function Projects() {
   return (
     <section id="projects" style={{ width: "100vw", boxSizing: "border-box", paddingTop: "6rem" }}>
-      <div style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
+      <div style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
         <h2 style={{
           fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
           fontWeight: 900, fontSize: "clamp(48px, 7vw, 96px)",
@@ -381,44 +382,44 @@ function DisplayCard({ icon, title, description, date }) {
 // ─── Skills ──────────────────────────────────────────────────────────────────
 const skillCards = [
   {
-    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>,
+    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
     title: "C++",
     description: "Systems programming & OOP",
     date: "Language",
   },
   {
-    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M12 2l9 4.9V17L12 22l-9-5.1V6.9z"/></svg>,
+    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M12 2l9 4.9V17L12 22l-9-5.1V6.9z" /></svg>,
     title: "Python",
     description: "Scripting, automation & ML",
     date: "Language",
   },
   {
-    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg>,
+    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z" /></svg>,
     title: "JavaScript",
     description: "Web interactivity & logic",
     date: "Language",
   },
   {
-    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>,
+    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>,
     title: "DSA",
     description: "Data Structures & Algorithms",
     date: "Foundation",
   },
 
   {
-    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>,
+    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>,
     title: "Web Dev",
     description: "HTML, CSS & JavaScript",
     date: "Tools & Web",
   },
   {
-    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><line x1="18" y1="9" x2="18" y2="15"/><line x1="6" y1="9" x2="12" y2="15"/></svg>,
+    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><circle cx="12" cy="18" r="3" /><circle cx="6" cy="6" r="3" /><circle cx="18" cy="6" r="3" /><line x1="18" y1="9" x2="18" y2="15" /><line x1="6" y1="9" x2="12" y2="15" /></svg>,
     title: "Git & GitHub",
     description: "Version control & collaboration",
     date: "Tools & Web",
   },
   {
-    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>,
+    icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" /></svg>,
     title: "Final Cut Pro",
     description: "Video editing & post-production",
     date: "Creative",
@@ -428,7 +429,7 @@ const skillCards = [
 function Skills() {
   return (
     <section id="skills" style={{ width: "100vw", boxSizing: "border-box", padding: "8rem 0" }}>
-      <div style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
+      <div style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
         <h2 style={{
           fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
           fontWeight: 900, fontSize: "clamp(48px, 7vw, 96px)",
@@ -475,7 +476,7 @@ function ScrollQuote() {
   const containerRef = useRef(null);
   return (
     <section style={{ width: "100vw", boxSizing: "border-box", padding: "6rem 0", background: "#1a1a1a", overflow: "hidden" }}>
-      <div style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "flex", justifyContent: "center" }}>
+      <div style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "flex", justifyContent: "center" }}>
         <div
           ref={containerRef}
           style={{
@@ -500,29 +501,29 @@ function ScrollQuote() {
 
 // ─── Hobbies ──────────────────────────────────────────────────────────────────
 const hobbyIcons = {
-  Coding: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>,
-  Calisthenics: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="5" r="2"/><path d="M12 7v8M9 10H6l-2 4M15 10h3l2 4M9 21l3-6 3 6"/></svg>,
-  Dance: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a5 5 0 0 1 5 5c0 5-5 11-5 11S7 12 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="2"/></svg>,
-  Running: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="13" cy="4" r="2"/><path d="M7 21l3-7 2 2 2-3 2 4M8 21h8M16 11l-4-3-3 4"/></svg>,
-  Baking: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 11h18M3 11a9 9 0 0 1 18 0M3 11v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6"/></svg>,
-  Spirituality: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>,
-  "Video Editing": <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>,
+  Coding: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
+  Calisthenics: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="5" r="2" /><path d="M12 7v8M9 10H6l-2 4M15 10h3l2 4M9 21l3-6 3 6" /></svg>,
+  Dance: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a5 5 0 0 1 5 5c0 5-5 11-5 11S7 12 7 7a5 5 0 0 1 5-5z" /><circle cx="12" cy="7" r="2" /></svg>,
+  Running: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="13" cy="4" r="2" /><path d="M7 21l3-7 2 2 2-3 2 4M8 21h8M16 11l-4-3-3 4" /></svg>,
+  Baking: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 11h18M3 11a9 9 0 0 1 18 0M3 11v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6" /></svg>,
+  Spirituality: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>,
+  "Video Editing": <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" /></svg>,
 };
 
 function Hobbies() {
   const hobbies = [
-    { name: "Coding",        desc: "Building projects & solving problems" },
-    { name: "Calisthenics",  desc: "Bodyweight training & movement" },
-    { name: "Dance",         desc: "Expression through rhythm" },
-    { name: "Running",       desc: "Sunset runs & clear head" },
-    { name: "Baking",        desc: "Baking" },
+    { name: "Coding", desc: "Building projects & solving problems" },
+    { name: "Calisthenics", desc: "Bodyweight training & movement" },
+    { name: "Dance", desc: "Expression through rhythm" },
+    { name: "Running", desc: "Sunset runs & clear head" },
+    { name: "Baking", desc: "Baking" },
     { name: "Video Editing", desc: "Final Cut Pro storytelling" },
-    { name: "Spirituality",  desc: "Practice spirituality" },
+    { name: "Spirituality", desc: "Practice spirituality" },
   ];
 
   return (
     <section style={{ width: "100vw", boxSizing: "border-box", padding: "8rem 0", background: "#1a1a1a" }}>
-      <div style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
+      <div style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
         <h2 style={{
           fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
           fontWeight: 900, fontSize: "clamp(48px, 7vw, 96px)",
@@ -599,7 +600,7 @@ function Contact() {
 
   return (
     <section id="contact" style={{ width: "100vw", boxSizing: "border-box", padding: "8rem 0" }}>
-      <div className="contact-grid" style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8rem" }}>
+      <div className="contact-grid" style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8rem" }}>
         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <h2 style={{
             fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
@@ -633,7 +634,7 @@ function Contact() {
             {sent ? (
               <motion.div key="sent" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
                 <div style={{ width: 64, height: 64, borderRadius: "50%", background: "#0000CD", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.5rem" }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                 </div>
                 <h3 style={{ fontWeight: 900, fontSize: 32, letterSpacing: "-0.03em", color: "#1a1a1a", marginBottom: "1rem" }}>Message Sent!</h3>
                 <p style={{ fontSize: 16, color: "#666" }}>I'll get back to you soon.</p>
@@ -688,7 +689,7 @@ function Contact() {
 function Footer() {
   return (
     <footer style={{ background: "#1a1a1a", padding: "5rem 0 3rem" }}>
-      <div style={{  padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
+      <div style={{ padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
         <h2 style={{
           fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
           fontWeight: 900, fontSize: "clamp(56px, 10vw, 160px)",
@@ -737,7 +738,7 @@ export default function Portfolio() {
   return (
     <div ref={containerRef} style={{
       fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-      background: "#EDEBE3", color: "#1a1a1a", overflowX: "hidden", width: "100vw", boxSizing: "border-box", 
+      background: "#EDEBE3", color: "#1a1a1a", overflowX: "hidden", width: "100vw", boxSizing: "border-box",
     }}>
       <Nav active={activeSection} />
       <main style={{ paddingTop: 0 }}>
